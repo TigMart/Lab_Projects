@@ -30,14 +30,16 @@ function App() {
       </header>
       <TodoForm
         onAdd={(text) => {
-          setTodos([
-            ...todos,
-            {
-              id: Math.random(),
-              text: text,
-              isCompleted: false,
-            },
-          ]);
+          if(!text == ""){
+            setTodos([
+              ...todos,
+              {
+                id: Math.random(),
+                text: text,
+                isCompleted: false,
+              },
+            ]);
+          }
         }}
       />
       <TodoList
